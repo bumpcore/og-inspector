@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OG Inspector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <div class="site">
+      <img id="favicon" class="favicon" alt="">
+      <div class="site-text">
+        <div id="host" class="host">Loading…</div>
+        <div id="page-url" class="page-url"></div>
+      </div>
+    </div>
+    <div class="controls">
+      <div class="seg" role="tablist" aria-label="Source">
+        <button id="src-raw" class="seg-btn active" data-source="raw" title="HTML as crawlers fetch it (no cookies, no JavaScript)">Crawler</button>
+        <button id="src-dom" class="seg-btn" data-source="dom" title="Live DOM in this tab (after JavaScript)">Live DOM</button>
+      </div>
+      <button id="reload" class="icon-btn" title="Re-fetch">↻</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="status" class="status">Reading page…</div>
+
+    <section id="image-section" class="section" hidden>
+      <div class="image-box">
+        <div id="image-frame" class="image-frame"></div>
+        <dl id="image-stats" class="stats"></dl>
+      </div>
+    </section>
+
+    <section id="checks-section" class="section" hidden>
+      <h2>Checks <span id="check-counts" class="counts"></span></h2>
+      <ul id="checks" class="checks"></ul>
+    </section>
+
+    <section id="previews-section" class="section" hidden>
+      <h2>Previews</h2>
+      <div id="previews" class="previews"></div>
+    </section>
+
+    <section id="tags-section" class="section" hidden>
+      <h2>Tags <button id="copy-tags" class="link-btn">copy</button></h2>
+      <table id="tags" class="tags"></table>
+    </section>
+  </main>
+
+  <footer class="bottom">
+    <span>Re-scrape:</span>
+    <a id="fb-debug" target="_blank" rel="noreferrer">Facebook</a>
+    <a id="li-debug" target="_blank" rel="noreferrer">LinkedIn</a>
+    <a id="ogxyz" target="_blank" rel="noreferrer">opengraph.xyz</a>
+  </footer>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
